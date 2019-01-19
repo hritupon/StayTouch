@@ -1,4 +1,4 @@
-package com.staytouch;
+package com.staytouch.Share;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,13 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.staytouch.R;
 import com.staytouch.Utils.BottomNavigationViewHelper;
 
-public class LikesActivity extends AppCompatActivity {
-    private static final String TAG = "LikesActivity";
+public class ShareActivity extends AppCompatActivity {
+    private static final String TAG = "ShareActivity";
 
-    private Context mContext = LikesActivity.this;
-    private static final int ACTIVITY_NUM = 3;
+    private Context mContext = ShareActivity.this;
+    private static final int ACTIVITY_NUM = 2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
