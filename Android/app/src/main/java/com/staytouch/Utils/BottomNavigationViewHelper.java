@@ -46,7 +46,7 @@ public class BottomNavigationViewHelper {
                         Intent intent4 = new Intent(context, LikesActivity.class);//ACTIVITY_NUM = 3
                         context.startActivity(intent4);
                         break;
-                    case R.id.ic_android:
+                    case R.id.ic_profile:
                         Intent intent5 = new Intent(context, ProfileActivity.class);//ACTIVITY_NUM = 4
                         context.startActivity(intent5);
                         break;
