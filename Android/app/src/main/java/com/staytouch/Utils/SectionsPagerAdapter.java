@@ -1,4 +1,4 @@
-package com.staytouch.Home;
+package com.staytouch.Utils;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

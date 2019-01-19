@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.staytouch.R;
 import com.staytouch.Utils.BottomNavigationViewHelper;
+import com.staytouch.Utils.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
