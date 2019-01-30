@@ -10,9 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.staytouch.R;
 import com.staytouch.Utils.BottomNavigationViewHelper;
 import com.staytouch.Utils.SectionsPagerAdapter;
+import com.staytouch.Utils.UniversalImageLoader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: starting");
+        initImageLoader();
         setupBottomNavigationView();
         setupViewPager();
+
+    }
+
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
     /*
