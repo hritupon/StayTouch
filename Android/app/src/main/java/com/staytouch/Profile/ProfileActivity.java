@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
+    private static final int NUM_GRID_COLUMNS = 3;
 
     private Context mContext = ProfileActivity.this;
     private ProgressBar mProgressBar;
@@ -45,14 +46,23 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void tempGridSetup() {
         ArrayList<String> imgUrls = new ArrayList<>();
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
-        imgUrls.add("images6.fanpop.com/image/photos/36600000/Sherlock-Holmes-Sherlock-BBC1-image-sherlock-holmes-sherlock-bbc1-36692648-267-400.jpg");
+        imgUrls.add("https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/tnc_48980557.jpg");
+        imgUrls.add("https://www.besthealthmag.ca/wp-content/uploads/sites/16/2018/04/Run-club-woman-running.jpg");
+        imgUrls.add("http://www.stpaulschurchjarrow.com/wp-content/uploads/2018/06/Family-time-3.jpg");
+        imgUrls.add("https://www.gsb.stanford.edu/sites/gsb/files/styles/1630x_variable/public/resources/bloom-wfh-1630_1.jpg");
+        imgUrls.add("https://www.thelocal.at/userdata/images/article/12b48057c60be6ca676e414106b5bd87cc4e11ab29185399bce384e51197ac07.jpg");
+        imgUrls.add("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Nutrition/Eat+More+to+Lose+Weight/carousel.jpg");
+        imgUrls.add("https://st.depositphotos.com/1035372/2152/i/950/depositphotos_21522603-stock-photo-man-babysitting.jpg");
+        imgUrls.add("https://www.cv-library.co.uk/career-advice/wp-content/uploads/2016/11/sick-day.jpg");
+        //duplicating
+        imgUrls.add("https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/tnc_48980557.jpg");
+        imgUrls.add("https://www.besthealthmag.ca/wp-content/uploads/sites/16/2018/04/Run-club-woman-running.jpg");
+        imgUrls.add("http://www.stpaulschurchjarrow.com/wp-content/uploads/2018/06/Family-time-3.jpg");
+        imgUrls.add("https://www.gsb.stanford.edu/sites/gsb/files/styles/1630x_variable/public/resources/bloom-wfh-1630_1.jpg");
+        imgUrls.add("https://www.thelocal.at/userdata/images/article/12b48057c60be6ca676e414106b5bd87cc4e11ab29185399bce384e51197ac07.jpg");
+        imgUrls.add("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Nutrition/Eat+More+to+Lose+Weight/carousel.jpg");
+        imgUrls.add("https://st.depositphotos.com/1035372/2152/i/950/depositphotos_21522603-stock-photo-man-babysitting.jpg");
+        imgUrls.add("https://www.cv-library.co.uk/career-advice/wp-content/uploads/2016/11/sick-day.jpg");
 
         setupImageGrid(imgUrls);
 
@@ -60,9 +70,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void setupImageGrid(ArrayList<String> imgUrls){
         GridView gridView = (GridView)findViewById(R.id.gridView);
+        int gridWidth = getResources().getDisplayMetrics().widthPixels;
+        int imageWidth= gridWidth / NUM_GRID_COLUMNS;
+        gridView.setColumnWidth(imageWidth);
         GridImageAdapter gridImageAdapter = new GridImageAdapter(mContext,
                                                                  R.layout.layout_grid_imageview,
-                                                       "http://",
+                                                       "",
                                                                  imgUrls);
         gridView.setAdapter(gridImageAdapter);
     }
